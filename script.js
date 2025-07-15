@@ -17,6 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Aqui, estamos procurando por um item que salvamos com a chave 'minhaNota'.
     const notaSalva = localStorage.getItem('minhaNota');
 
+    const botaoExcluir = document.getElementById('btnExcluir');
+
+    botaoExcluir.addEventListener('click', () => {
+        blocoDeNotas.value = ''; 
+        localStorage.removeItem('minhaNota');
+        console.log('Notas excluídas do localStorage!'); // Mensagem de confirmação no console
+    });
+
     // Verificamos se encontramos alguma nota salva.
     if (notaSalva) {
         // Se 'notaSalva' não for nulo (ou seja, existe algo salvo),
@@ -49,5 +57,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log("Nota salva no localStorage!"); // Uma mensagem no console para fins de depuração.
     });
-
+    
 });
