@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const notaSalva = localStorage.getItem('minhaNota');
 
     const botaoExcluir = document.getElementById('btnExcluir');
+    
+    const botaoSalvar = document.getElementById('btnSalvar');
 
     botaoExcluir.addEventListener('click', () => {
         blocoDeNotas.value = ''; 
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     toda vez que o valor do <textarea> muda (ou seja, o usuário digita, apaga, etc).
     //   - O segundo é a FUNÇÃO que será executada quando o evento acontecer.
     //     Esta função é chamada de "callback".
-    blocoDeNotas.addEventListener('input', () => {
+    botaoSalvar.addEventListener('click', () => {
         // 4. SALVANDO DADOS NO LOCALSTORAGE
         // -----------------------------------
         // Dentro da nossa função de callback, pegamos o valor atual do bloco de notas
